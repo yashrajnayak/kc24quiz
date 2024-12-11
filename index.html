@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirector</title>
+    <script>
+        // Function to select a random link and redirect the user
+        function redirectToForm() {
+            var links = [
+                "https://docs.google.com/forms/d/e/1FAIpQLScwnjFnaw1s89wEw_6YFbLGNExZaU18X7YT9zDgyrTSW7ekKQ/viewform?usp=dialog",
+                "https://docs.google.com/forms/d/e/1FAIpQLScuwcwl9TkmlI4Xhmrw85nUlfthU3m3HUYLCi9m1cwg-2CbZg/viewform?usp=dialog"
+            ];
+
+            // Select a random link
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var selectedLink = links[randomIndex];
+
+            // Redirect to the selected link
+            window.location.href = selectedLink;
+        }
+
+        // Execute redirect on page load
+        window.onload = redirectToForm;
+    </script>
+</head>
+<body>
+    <!-- The body is intentionally left empty as there is no UI -->
+</body>
+</html>
