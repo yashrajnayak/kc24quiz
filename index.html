@@ -4,28 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirector</title>
+    <title>GitHub Interaction Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #instructions {
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .twitter-btn {
+            background-color: #1DA1F2; /* Twitter blue */
+        }
+        .quiz-btn {
+            background-color: #4CAF50; /* Green */
+        }
+        #additional-links {
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
     <script>
-        // Function to select a random link and redirect the user
-        function redirectToForm() {
-            var links = [
-                "https://docs.google.com/forms/d/e/1FAIpQLScwnjFnaw1s89wEw_6YFbLGNExZaU18X7YT9zDgyrTSW7ekKQ/viewform?usp=dialog",
-                "https://docs.google.com/forms/d/e/1FAIpQLScuwcwl9TkmlI4Xhmrw85nUlfthU3m3HUYLCi9m1cwg-2CbZg/viewform?usp=dialog"
-            ];
-
-            // Select a random link
-            var randomIndex = Math.floor(Math.random() * links.length);
-            var selectedLink = links[randomIndex];
-
-            // Redirect to the selected link
-            window.location.href = selectedLink;
+        // Function to open Twitter/X in a new tab
+        function followOnTwitter() {
+            window.open('https://x.com/GitHubIndia', '_blank');
         }
 
-        // Execute redirect on page load
-        window.onload = redirectToForm;
+        // Function to redirect user to one of the quiz links
+        function takeQuiz() {
+            var links = [
+                "https://docs.google.com/forms/d/e/1FAIpQLScXNWgeppHw_bh-Y8LsubnyCiYow0QRDKC8XevbKcT0gArflQ/viewform?usp=dialog",
+                "https://docs.google.com/forms/d/e/1FAIpQLSfUmZzNwG7YO2kfRYnE8cjicfgh5walOyMvQ8tC7fx1FgQIlg/viewform?usp=dialog"
+            ];
+
+            var randomIndex = Math.floor(Math.random() * links.length);
+            window.location.href = links[randomIndex];
+        }
     </script>
 </head>
 <body>
-    <!-- The body is intentionally left empty as there is no UI -->
+    <div id="instructions">
+        <p><strong>Both steps are required. If your score is 10/10 in the quiz, please proceed to the GitHub Booth.</strong></p>
+    </div>
+
+    <div>
+        <button class="btn twitter-btn" onclick="followOnTwitter()">Follow @GitHubIndia on Twitter/X</button>
+        <button class="btn quiz-btn" onclick="takeQuiz()">Take the Quiz</button>
+    </div>
+
+    <div id="additional-links">
+        <p><a href="https://gh.io/spark-signup" target="_blank">Join the waitlist for GitHub Spark</a></p>
+        <p><a href="https://gh.io/newissues/signup" target="_blank">New GitHub Issues</a></p>
+        <p><a href="https://gh.io/models" target="_blank">Try GitHub Models</a></p>
+        <p><a href="https://gh.io/workspace/signup" target="_blank">Join the waitlist for Workspace</a></p>
+        <p><a href="https://gh.io/codereview/signup" target="_blank">Join the waitlist for Copilot-powered Code Review</a></p>
+    </div>
 </body>
 </html>
